@@ -6,23 +6,21 @@
 </head>
 
 <body>
+
     <header>
-        <h1><a href="/"> Primul meu blog </a></h1>
+        <h1> Mare Blog </h1>
     </header>
 
-    <article>  <!-- articolul 1 -->
-        <h2><a href=""> Prima postare </a></h2> 
-        <time> publicata la 27.05.2021, 19:30 </time>
-        <p> Wall of text full of mega bs. </p>
-    </article>
-    
-    <article> <!-- articlolul 2 -->
-        <h2><a href=""> A doua postare </a></h2>
-        <time> publicata la 27.05.2021, 19:30 </time>
-        <p> Huge wall of text full of bs. </p>
-    </article>
-    
-</body>
 
+    
+    {% for post in posts %}
+        <article>
+            <h2><a href="">{{post.title}}</a></h2>
+            <time>published {{post.published_date}}</time>
+            <p>{{post.text|linebreaksbr}}
+        </article>
+    {% endfor %}
+
+</body>
 </html>
 
